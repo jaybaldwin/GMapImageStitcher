@@ -1,0 +1,141 @@
+<!-- Dead Sea Scroll / Google Map Downloader
+     by Jay Baldwin -->
+
+<!--<!DOCTYPE html>-->
+
+<html>
+<head>
+	<title>Google Map Document Downloader</title>
+	<style>
+		img { display: inline-block; margin: 0; padding: 0; }
+		div.isaiah img.tile { width: 227px; }
+		div.isaiah div.col { width: 227px; }
+
+		div.temple img.tile { width: 190px; }
+		div.temple div.col { width: 190px; }
+
+		div.document { position: relative; }
+	</style>
+
+	<script>
+	var fncMakeMarkup = function () {
+
+		let txtWebRoot = document.getElementById('txtWebRoot');
+		let txtFilePattern = document.getElementById('txtFilePattern');
+		let txtZoomLevel = document.getElementById('txtZoomLevel');
+		let txtXmin = document.getElementById('txtXmin');
+		let txtXmax = document.getElementById('txtXmax');
+		let txtYmin = document.getElementById('txtYmin');
+		let txtYmax = document.getElementById('txtYmax');
+		let txtColWidth = document.getElementById('txtColWidth');
+		let spanNumberOfTiles = document.getElementById('spanNumberOfTiles');
+		let theMarkup = document.getElementById('theMarkup');
+		let theDocument = document.getElementById('theDocument');
+
+
+		let root = 'http://tiles.imj.org.il/tiles/isaiah/';
+		root = txtWebRoot.value.trim();
+			
+		let colWidth = 227; // width in pixels
+		colWidth = parseInt(txtColWidth.value);	
+
+		let zoomLevel = 10;
+		zoomLevel = parseInt(txtZoomLevel.value);
+
+		let Xmin = 0;
+		Xmin = parseInt(txtXmin.value);
+
+		let Xmax = 100;
+		Xmax = parseInt(txtXmax.value);
+
+		let Ymin = 0;
+		Ymin = parseInt(txtYmin.value);
+
+		let Ymax = 19;
+		Ymax = parseInt(txtYmax.value);
+
+		let file_pattern = 'Z_X_Y.jpg';
+		file_pattern = txtFilePattern.value;
+
+
+
+		let estX_tiles = (Xmax - Xmin);
+		let estY_tiles = (Ymax - Ymin);
+
+		let estimate = (estX_tiles * estY_tiles);
+
+		spanNumberOfTiles.innerHTML = estX_tiles + ' * ' + estY_tiles + ' = ' + estimate + '.  Est. 38 KB each = ' + (estimate * 38).toString() + ' KB or ' + ((estimate * 38) / 1024).toString() + ' MB.';
+		
+		
+		let markup = '';
+
+		for (let x = Xmin; x <= Xmax; x++) {
+			let colOffsetX = (parseInt(x) * colWidth);
+			
+			markup += "<div class=\"col\" style=\"left: " + colOffsetX + "px; top: 0; position: absolute;\">\r\n";
+			for (let y = Ymin; y <= Ymax; y++) {
+
+				file = file_pattern;
+				file = file.replace('Z', zoomLevel.toString());
+				file = file.replace('X', x.toString());
+				file = file.replace('Y', y.toString());
+				//console.log(file);
+				
+				let path = root + file;
+				//document.write("wget " + path + "<br />");
+				markup += "    <img class=\"tile\" src=\"" + path + "\" alt=\"" + path + "\" />\r\n";
+			}
+			markup += "</div>\r\n";
+		}
+		
+		theMarkup.value = markup;
+		//theDocument.innerHTML = markup;
+	}
+
+	var fncGetScroll = function () {
+		
+		let theMarkup = document.getElementById('theMarkup');
+		let theDocument = document.getElementById('theDocument');
+
+		theDocument.innerHTML = theMarkup.value;
+
+	}
+	</script>
+<body>
+	<h1>Google Map Document Downloader</h1>
+	<br />
+	File Root: <input type="text" id="txtWebRoot" value="http://tiles.imj.org.il/tiles/temple/" style="width: 80%;" /><br /><br />
+	<!-- Isaiah: http://tiles.imj.org.il/tiles/isaiah/ Pattern: Z_X_Y.jpg MaxFile: 10_511_19.jpg TileSize: 227 -->
+	<!-- Temple: http://tiles.imj.org.il/tiles/temple/ Pattern: Z_X_Y.jpg MaxFile: 11_1025_27.jpg TileSize: 190--> 
+
+	File Pattern: <input type="text" id="txtFilePattern" value="Z_X_Y.jpg" style="width: 80%;" /><br /><br />
+	Zoom Level: <input type="text" id="txtZoomLevel" value="11" /><br /><br />
+	X: Min: <input type="text" id="txtXmin" value="0" /> - Max: <input type="text" id="txtXmax" value="1025" /><br />
+    Y: Min: <input type="text" id="txtYmin" value="0" /> - Max: <input type="text" id="txtYmax" value="27" /><br />
+	Column Size: <input type="text" id="txtColWidth" value="190" />
+	<br /><br />
+
+	<button onclick="fncMakeMarkup()">Generate Markup &amp; Evaluate</button>
+
+	<br /><br />
+	<span id="spanNumberOfTiles">511 x 19 = 9709. Est 38kb each = 38. 9709 * 38 KB / 1024 KB in a MB = ~360 MB</span>
+
+
+	<br /><br />
+
+	<textarea id="theMarkup" class="document temple">
+	</textarea>
+
+	<br /><br />
+		<hr />
+
+	<button onclick="fncGetScroll()">Do it.</button>
+
+	<div id="theDocument" class="document temple"><!--isaiah-->
+	</div>
+
+
+
+
+</body>
+</html>
