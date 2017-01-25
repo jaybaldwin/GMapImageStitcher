@@ -1,0 +1,15 @@
+D:\Development\Repositories\Personal\Projects\GMapImageSticher\ConsoleApplication1\bin\Debug\ImageStitcher.exe.config
+D:\Development\Repositories\Personal\Projects\GMapImageSticher\ConsoleApplication1\bin\Debug\ImageStitcher.exe
+D:\Development\Repositories\Personal\Projects\GMapImageSticher\ConsoleApplication1\bin\Debug\ImageStitcher.pdb
+D:\Development\Repositories\Personal\Projects\GMapImageSticher\ConsoleApplication1\bin\Debug\CommandLine.dll
+D:\Development\Repositories\Personal\Projects\GMapImageSticher\ConsoleApplication1\bin\Debug\CommandLine.xml
+D:\Development\Repositories\Personal\Projects\GMapImageSticher\ConsoleApplication1\obj\Debug\ImageStitcher.exe
+D:\Development\Repositories\Personal\Projects\GMapImageSticher\ConsoleApplication1\obj\Debug\ImageStitcher.pdb
+D:\Development\Repositories\Personal\Projects\GMapImageSticher\ImageStitcher\bin\Debug\ImageStitcher.exe.config
+D:\Development\Repositories\Personal\Projects\GMapImageSticher\ImageStitcher\obj\Debug\ImageStitcher.exe
+D:\Development\Repositories\Personal\Projects\GMapImageSticher\ImageStitcher\obj\Debug\ImageStitcher.pdb
+D:\Development\Repositories\Personal\Projects\GMapImageSticher\ImageStitcher\bin\Debug\ImageStitcher.exe
+D:\Development\Repositories\Personal\Projects\GMapImageSticher\ImageStitcher\bin\Debug\ImageStitcher.pdb
+D:\Development\Repositories\Personal\Projects\GMapImageSticher\ImageStitcher\bin\Debug\CommandLine.dll
+D:\Development\Repositories\Personal\Projects\GMapImageSticher\ImageStitcher\bin\Debug\CommandLine.xml
+D:\Development\Repositories\Personal\Projects\GMapImageSticher\ImageStitcher\obj\Debug\ImageStitcher.csprojResolveAssemblyReference.cache

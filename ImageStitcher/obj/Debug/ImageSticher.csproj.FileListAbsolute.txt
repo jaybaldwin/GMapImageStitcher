@@ -1,0 +1,8 @@
+D:\Development\Repositories\Personal\Projects\GMapImageSticher\ConsoleApplication1\obj\Debug\ImageSticher.csprojResolveAssemblyReference.cache
+D:\Development\Repositories\Personal\Projects\GMapImageSticher\ConsoleApplication1\bin\Debug\ImageSticher.exe.config
+D:\Development\Repositories\Personal\Projects\GMapImageSticher\ConsoleApplication1\bin\Debug\ImageSticher.exe
+D:\Development\Repositories\Personal\Projects\GMapImageSticher\ConsoleApplication1\bin\Debug\ImageSticher.pdb
+D:\Development\Repositories\Personal\Projects\GMapImageSticher\ConsoleApplication1\obj\Debug\ImageSticher.exe
+D:\Development\Repositories\Personal\Projects\GMapImageSticher\ConsoleApplication1\obj\Debug\ImageSticher.pdb
+D:\Development\Repositories\Personal\Projects\GMapImageSticher\ConsoleApplication1\bin\Debug\CommandLine.dll
+D:\Development\Repositories\Personal\Projects\GMapImageSticher\ConsoleApplication1\bin\Debug\CommandLine.xml
